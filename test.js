@@ -1,5 +1,5 @@
 const web3 = require("./web3");
-const Product = require("./build/Test.json");
+const Test = require("./build/Test.json");
 const address = require("./address/address.json")["addressTest"];
 
 const catchError = (err, trycatch = false) => {
@@ -24,9 +24,9 @@ const catchError = (err, trycatch = false) => {
   };
 };
 
-const instance = new web3.eth.Contract(JSON.parse(Product.interface), address);
+const instance = new web3.eth.Contract(JSON.parse(Test.interface), address);
 
-const truzrMethod = (
+const testMethod = (
   funcName,
   argumentsArray,
   callOrSend,
@@ -50,5 +50,5 @@ const truzrMethod = (
 };
 
 module.exports = {
-  truzrMethod
+  testMethod
 };

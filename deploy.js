@@ -1,5 +1,5 @@
 const web3 = require("./web3");
-const product = require("./build/Test.json");
+const test = require("./build/Test.json");
 const fs = require("fs-extra");
 const path = require("path");
 const addressPath = path.resolve(__dirname, "address");
@@ -15,8 +15,8 @@ const deploy = async () => {
 
   console.log("Attempting to deploy from account", accounts[1]);
 
-  const result = await new web3.eth.Contract(JSON.parse(product.interface))
-    .deploy({ data: "0x" + product.bytecode })
+  const result = await new web3.eth.Contract(JSON.parse(test.interface))
+    .deploy({ data: "0x" + test.bytecode })
     .send({ gas: limit, from: accounts[1] })
     .catch(console.log);
 

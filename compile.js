@@ -2,9 +2,9 @@ const path = require("path");
 const solc = require("solc");
 const fs = require("fs-extra");
 
-const productPath = path.resolve(__dirname, "contract", "Test.sol");
+const testPath = path.resolve(__dirname, "contract", "Test.sol");
 
-const source = fs.readFileSync(productPath, "utf8");
+const source = fs.readFileSync(testPath, "utf8");
 
 const output = solc.compile(source, 1).contracts;
 
